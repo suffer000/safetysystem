@@ -18,10 +18,10 @@ use Cake\ORM\Entity;
  * @property string $user_password
  * @property string|null $user_memo
  * @property int $created_by
- * @property \Cake\I18n\FrozenTime $create_time
+ * @property \Cake\I18n\FrozenTime $created
  * @property int|null $updated_by
- * @property \Cake\I18n\FrozenTime|null $update_time
- * @property bool $deleted
+ * @property \Cake\I18n\FrozenTime|null $modified
+ * @property \Cake\I18n\FrozenTime|null $deleted
  *
  * @property \App\Model\Entity\MDepartment $m_department
  * @property \App\Model\Entity\MArea $m_area
@@ -47,9 +47,9 @@ class MUser extends Entity
         'user_password' => true,
         'user_memo' => true,
         'created_by' => true,
-        'create_time' => true,
+        'created' => true,
         'updated_by' => true,
-        'update_time' => true,
+        'modified' => true,
         'deleted' => true,
         'm_department' => true,
         'm_area' => true,

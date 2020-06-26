@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fd888f853a65e68c6a1fcf36c4d9205",
+    "content-hash": "81cd4c36fac460e90d5a8514dea47867",
     "packages": [
         {
             "name": "aura/intl",
@@ -1114,6 +1114,50 @@
                 "phinx"
             ],
             "time": "2020-04-11T07:17:48+00:00"
+        },
+        {
+            "name": "salines/cakephp4-soft-delete",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salines/cakephp4-soft-delete.git",
+                "reference": "9e0760607882512321b0e20faad065e73506d65f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salines/cakephp4-soft-delete/zipball/9e0760607882512321b0e20faad065e73506d65f",
+                "reference": "9e0760607882512321b0e20faad065e73506d65f",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": ">=4.0",
+                "cakephp/plugin-installer": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "SoftDelete\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "SoftDelete plugin updated for CakePHP 4",
+            "homepage": "https://github.com/salines/cakephp4-soft-delete",
+            "keywords": [
+                "cakephp",
+                "cakephp 4",
+                "deletable",
+                "delete",
+                "plugin",
+                "soft"
+            ],
+            "time": "2020-06-02T09:04:09+00:00"
         },
         {
             "name": "symfony/config",

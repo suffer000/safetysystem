@@ -7,6 +7,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use SoftDelete\Model\Table\SoftDeleteTrait;
 
 /**
  * MUsers Model
@@ -27,9 +28,12 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\MUser[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
  * @method \App\Model\Entity\MUser[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \App\Model\Entity\MUser[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class MUsersTable extends Table
 {
+    use SoftDeleteTrait;
     /**
      * Initialize method
      *
@@ -43,6 +47,8 @@ class MUsersTable extends Table
         $this->setTable('m_users');
         $this->setDisplayField('user_id');
         $this->setPrimaryKey('user_id');
+
+        $this->addBehavior('Timestamp');
 
         $this->belongsTo('MDepartments', [
             'foreignKey' => 'department_id',
@@ -106,22 +112,12 @@ class MUsersTable extends Table
             ->notEmptyString('created_by');
 
         $validator
-            ->dateTime('create_time')
-            ->requirePresence('create_time', 'create')
-            ->notEmptyDateTime('create_time');
-
-        $validator
             ->integer('updated_by')
             ->allowEmptyString('updated_by');
 
         $validator
-            ->dateTime('update_time')
-            ->allowEmptyDateTime('update_time');
-
-        $validator
-            ->boolean('deleted')
-            ->requirePresence('deleted', 'create')
-            ->notEmptyString('deleted');
+            ->dateTime('deleted')
+            ->allowEmptyDateTime('deleted');
 
         return $validator;
     }

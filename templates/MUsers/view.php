@@ -63,16 +63,16 @@
                     <td><?= $this->Number->format($mUser->updated_by) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Create Time') ?></th>
-                    <td><?= h($mUser->create_time) ?></td>
+                    <th><?= __('Created') ?></th>
+                    <td><?= h($mUser->created) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Update Time') ?></th>
-                    <td><?= h($mUser->update_time) ?></td>
+                    <th><?= __('Modified') ?></th>
+                    <td><?= h($mUser->modified) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Deleted') ?></th>
-                    <td><?= $mUser->deleted ? __('Yes') : __('No'); ?></td>
+                    <td><?= h($mUser->deleted) ?></td>
                 </tr>
             </table>
         </div>

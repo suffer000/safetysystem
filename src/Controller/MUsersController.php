@@ -22,7 +22,7 @@ class MUsersController extends AppController
             'contain' => ['MDepartments', 'MAreas'],
         ];
         $mUsers = $this->paginate($this->Musers);
-
+        //$this->log($this->Musers->find()->sql());
         $this->set(compact('mUsers'));
     }
 
@@ -49,7 +49,6 @@ class MUsersController extends AppController
      */
     public function add()
     {
-        $this->log('変数$mUserの値は：'. $mUser . 'です。');
         $mUser = $this->Musers->newEmptyEntity();
         if ($this->request->is('post')) {
             $mUser = $this->Musers->patchEntity($mUser, $this->request->getData());

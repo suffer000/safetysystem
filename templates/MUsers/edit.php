@@ -31,10 +31,8 @@
                     echo $this->Form->control('user_password');
                     echo $this->Form->control('user_memo');
                     echo $this->Form->control('created_by');
-                    echo $this->Form->control('create_time');
                     echo $this->Form->control('updated_by');
-                    echo $this->Form->control('update_time', ['empty' => true]);
-                    echo $this->Form->control('deleted');
+                    echo $this->Form->control('deleted', ['empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

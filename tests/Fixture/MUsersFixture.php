@@ -27,10 +27,10 @@ class MUsersFixture extends TestFixture
         'user_password' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_0900_ai_ci', 'comment' => '', 'precision' => null],
         'user_memo' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_0900_ai_ci', 'comment' => '', 'precision' => null],
         'created_by' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'create_time' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
+        'created' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
         'updated_by' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'update_time' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
-        'deleted' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'modified' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
+        'deleted' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
         '_indexes' => [
             'department_key' => ['type' => 'index', 'columns' => ['department_id'], 'length' => []],
             'area_key' => ['type' => 'index', 'columns' => ['area_id'], 'length' => []],
@@ -66,10 +66,10 @@ class MUsersFixture extends TestFixture
                 'user_password' => 'Lorem ipsum dolor sit amet',
                 'user_memo' => 'Lorem ipsum dolor sit amet',
                 'created_by' => 1,
-                'create_time' => '2020-06-25 01:40:05',
+                'created' => '2020-06-25 06:39:13',
                 'updated_by' => 1,
-                'update_time' => '2020-06-25 01:40:05',
-                'deleted' => 1,
+                'modified' => '2020-06-25 06:39:13',
+                'deleted' => '2020-06-25 06:39:13',
             ],
         ];
         parent::init();
